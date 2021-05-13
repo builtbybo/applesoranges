@@ -40,7 +40,7 @@ I would also separate the deal offer functions
 
 - Get the length of  oranges in the array
 - If the total length is less than 3 :   orangeSubtotal = orangeTotal*priceOfOrange;
-- If Orange Total % 3 === 0 OR Orange Total % 3 === 1 the the deal price calculation to get the correct pricing:
+- If Orange Total % 3 === 0 OR Orange Total % 3 === 1 OR Orange Total % 3 === 2 the deal price calculation to get the correct pricing:
   Deal Price = (Price Of Orange x Orange Total) - Price Of Orange x 1;
 
 
@@ -50,7 +50,6 @@ I would also separate the deal offer functions
 ### Extra notes:
 
 As I developed using a supermarket approach i assumed items would be added one at a time as opposed to a whole list being scanned in at the till
-
 
 
 ## Available Scripts

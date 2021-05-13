@@ -91,7 +91,7 @@ export default function App() {
 
     }
 
-    if (orangeTotal % 3 === 0 || orangeTotal % 3 === 1) {
+    if (orangeTotal % 3 === 0 || orangeTotal % 3 === 2 || orangeTotal % 3 === 1) {
       orangeSubtotal = dealPrice - priceOfOrange;
     }
 
