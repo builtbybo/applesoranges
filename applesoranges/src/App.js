@@ -2,7 +2,7 @@ import './App.css';
 
 import { useState } from "react";
 
-let priceOfOranges = 0.25, priceOfApples = 0.6;
+let priceOfOrange = 0.25, priceOfApples = 0.6;
 
 let shoppingItems = [];
 
@@ -27,28 +27,77 @@ export default function App() {
     }
   }
 
+  // function fruitCalc(listOfItems) {
+  //   //   // takes an array of shopping list items
+  //   //   // loops through and calculates the total
+  //   //   // for every apple * by priceOfApples
+  //   //   // for every orange * by priceOfOranges
+
+  //   let appleTotal, orangeTotal;
+
+  //   // number of apples in arr
+  //   appleTotal =
+  //     listOfItems.filter(function (val) {
+  //       return val === "apple";
+  //     }).length * priceOfApples;
+
+  //   // number of oranges in arr
+  //   orangeTotal =
+  //     listOfItems.filter(function (val) {
+  //       return val === "orange";
+  //     }).length * priceOfOranges;
+
+  //   return setSubtotal(appleTotal + orangeTotal);
+  // }
+
+
+
+
+  
   function fruitCalc(listOfItems) {
-    //   // takes an array of shopping list items
-    //   // loops through and calculates the total
-    //   // for every apple * by priceOfApples
-    //   // for every orange * by priceOfOranges
+   // OFFER FUNCTION
 
-    let appleTotal, orangeTotal;
+    // Apple section
+    let noOfApples,newAppleTotal = 0;
 
-    // number of apples in arr
-    appleTotal =
-      listOfItems.filter(function (val) {
-        return val === "apple";
-      }).length * priceOfApples;
+    noOfApples = listOfItems.filter(function (val) {
+      return val === "apple";
+    }).length;
 
-    // number of oranges in arr
-    orangeTotal =
-      listOfItems.filter(function (val) {
-        return val === "orange";
-      }).length * priceOfOranges;
+    if (noOfApples % 2 === 0) {
+      // check they have an even number in their basket
+      newAppleTotal = (noOfApples / 2) * priceOfApples;
+    } else {
+      noOfApples = noOfApples - 1;
+      newAppleTotal = (noOfApples / 2) * priceOfApples;
 
-    return setSubtotal(appleTotal + orangeTotal);
+      newAppleTotal += priceOfApples;
+    }
+
+    // Orange offer section
+    let orangeSubtotal = 0;
+
+    // get the length of  oranges in the array
+    let orangeTotal = listOfItems.filter(function (val) {
+      return val === "orange";
+    }).length;
+
+    let dealPrice = priceOfOrange * orangeTotal - priceOfOrange * 1;
+
+    // if the total length is less than 3 no deal is applied
+    if (orangeTotal < 3) {
+
+      orangeSubtotal = orangeTotal * priceOfOrange;
+
+    }
+
+    if (orangeTotal % 3 === 0 || orangeTotal % 3 === 1) {
+      orangeSubtotal = dealPrice - priceOfOrange;
+    }
+
+    return setSubtotal(newAppleTotal + orangeSubtotal);
   }
+
 
   function onFoc() {
     document.getElementById("shoppingInput").value = "";
