@@ -2,7 +2,7 @@
 ## Apples and Oranges Task
 
 
-# My Approach to Step 1:
+### My Approach to Step 1:
 --------------------------
 
 'The Supermarket Experience'
